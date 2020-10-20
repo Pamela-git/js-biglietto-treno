@@ -11,6 +11,26 @@ console.log(km, eta);
 //calcolo prezzo Biglietto generico
 
 var tariffa = km * 0.21;
-console.log( "prezzo biglietto: ", tariffa)
+console.log( "prezzo biglietto: ", tariffa);
+
+// variabili per tariffe con sconto minorenni e over 65
+var tariffaminorenne = tariffa - ((tariffa / 100) * 20);
+var tariffaanziani = tariffa - ((tariffa / 100) * 40);
+
+//definire variabile prezzo finale
+var prezzo;
 
 //calcolo prezzo biglietto con relative condizioni
+if (eta < 18 ) {
+  prezzo = tariffaminorenne;
+  console.log(tariffaminorenne);
+} else if (eta > 65) {
+  prezzo = tariffaanziani;
+  console.log(tariffaanziani);
+} else {
+  prezzo = tariffa;
+  console.log(tariffa);
+}
+
+// output stampo in pagina il prezzo
+document.getElementById('prezzo').innerHTML = "Grazie per aver acquistato dal nostro sito, il prezzo del biglietto è: <br>" + prezzo.toFixed(2) + " Euro";
