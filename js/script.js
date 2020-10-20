@@ -4,9 +4,13 @@ va applicato uno sconto del 20% per i minorenni
 va applicato uno sconto del 40% per gli over 65*/
 
 //step 1: chiedere numero di km percorsi
-
+var km = parseInt(prompt("Benvenuto! Scrivi qui quanti km devi percorrere"));
 //chiedere età del passeggero
-
+var eta = parseInt(prompt("Scrivi qui la tua età"));
+console.log(km, eta);
 //calcolo prezzo Biglietto generico
+
+var tariffa = km * 0.21;
+console.log( "prezzo biglietto: ", tariffa)
 
 //calcolo prezzo biglietto con relative condizioni
